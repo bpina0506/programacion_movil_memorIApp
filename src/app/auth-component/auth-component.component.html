@@ -1,0 +1,79 @@
+<ion-content [fullscreen]="true">
+
+  <!-- Login Page -->
+  <div class="container"  *ngIf="screen == 'signin'">
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-img src="../../assets/img/logo1.png"></ion-img>      
+      </ion-toolbar>
+    </ion-header>
+    <h1 class="heading"> Bienvenido<br><br></h1>
+    <p class="para">Inicia sesion para continuar</p>
+    <form [formGroup]="formData">
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Email</legend> 
+          <ion-input formControlName="email" type="email" placeholder="correo@dominio.cl"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Contraseña</legend> 
+          <ion-input formControlName="password" type="password" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+      <p class="forget-text"><a (click)="change('forget')">¿Olvidó su contraseña?</a></p>
+      <p class="signup-text">Soy un usuario nuevo&nbsp;<a (click)="change('signup')">Registrarse</a></p>
+      <ion-button class="login-button" (click)="login()" expand="block">Iniciar sesión</ion-button>
+    </form>
+  </div>
+
+  <!-- Sign up page -->
+  <div class="container"  *ngIf="screen == 'signup'">
+    <h1 class="heading">🚀 Crear cuenta<br><br></h1>
+    <p class="para">Registrate para empezar</p>
+    <form [formGroup]="formData">
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Nombre completo</legend> 
+          <ion-input formControlName="name" type="text" placeholder="John Doe"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Email</legend> 
+          <ion-input formControlName="email" type="email" placeholder="correo@dominio.com"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Contraseña</legend> 
+          <ion-input formControlName="password" type="password" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+      <p class="signup-text">Ya estoy registrado&nbsp;<a (click)="change('signin')">Iniciar sesión</a></p>
+      <ion-button class="login-button" (click)="register()" expand="block">Registrarse</ion-button>
+    </form>
+  </div>
+
+  <!-- Forget password page -->
+  <div class="container"  *ngIf="screen == 'forget'">
+    <h1 class="heading">¿Olvidó su contraseña?<br><br></h1>
+    <p class="para">Ingrese el email para restaurar la contraseña</p>
+    <ion-item lines="none" class="ion-item">
+      <fieldset  class="input-item">
+        <legend>Email</legend> 
+        <ion-input type="email" placeholder="name@domain.com"></ion-input>
+      </fieldset>
+    </ion-item>
+    <p class="signup-text">Recordé mi contraseña&nbsp;<a (click)="change('signin')">Iniciar sesión</a></p>
+    <ion-button class="login-button" expand="block">Restaurar contraseña</ion-button>
+  </div>
+
+
+</ion-content>
+<ion-footer color="white">
+  <ion-toolbar>
+    <p class="copyright">Desarrollado por&nbsp;<a>BP&RG</a></p>
+  </ion-toolbar>
+</ion-footer>
