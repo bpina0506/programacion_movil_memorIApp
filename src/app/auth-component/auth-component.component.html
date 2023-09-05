@@ -15,7 +15,7 @@
           <legend>Email</legend> 
           <ion-input formControlName="email" type="email" placeholder="correo@dominio.cl"></ion-input>
         </fieldset>
-        
+
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
@@ -32,6 +32,11 @@
 
   <!-- Sign up page -->
   <div class="container"  *ngIf="screen == 'signup'">
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-img src="../../assets/img/logo1.png"></ion-img>      
+      </ion-toolbar>
+    </ion-header>
     <h1 class="heading">🚀 Crear cuenta<br><br></h1>
     <p class="para">Registrate para empezar</p>
     <form [formGroup]="formData">
@@ -60,6 +65,11 @@
 
   <!-- Forget password page -->
   <div class="container"  *ngIf="screen == 'forget'">
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-img src="../../assets/img/logo1.png"></ion-img>      
+      </ion-toolbar>
+    </ion-header>
     <h1 class="heading">¿Olvidó su contraseña?<br><br></h1>
     <p class="para">Ingrese el email para restaurar la contraseña</p>
     <ion-item lines="none" class="ion-item">
