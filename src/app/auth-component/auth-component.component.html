@@ -15,6 +15,7 @@
           <legend>Email</legend> 
           <ion-input formControlName="email" type="email" placeholder="correo@dominio.cl"></ion-input>
         </fieldset>
+        
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
@@ -27,7 +28,7 @@
       <ion-button class="login-button" (click)="login()" expand="block">Iniciar sesión</ion-button>
     </form>
   </div>
-  
+
 
   <!-- Sign up page -->
   <div class="container"  *ngIf="screen == 'signup'">
